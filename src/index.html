@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fantasy Healthcare</title>
+<script src="src/Runtime.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+var openUrl,closeUrl,returnToGame,hideUrl;
+	$(document).ready(function($) {
+		openUrl = function(url) {
+			$('iframe').attr('src',url);
+			$('#iframe').show();
+		};
+		closeUrl = function() {
+			$('iframe').attr('src','blank.html');
+			$('#iframe').hide();
+		};
+		hideUrl = function() {
+			$('#iframe').hide();
+		};
+		returnToGame = function() {
+			$('#iframe').show();
+		};
+	});
+</script>
+
+<style type="text/css">
+html {height: 100%;}
+body {
+	background: #627d4d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #627d4d 0%, #1f3b08 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#627d4d), color-stop(100%,#1f3b08)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #627d4d 0%,#1f3b08 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #627d4d 0%,#1f3b08 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08',GradientType=0 ); /* IE6-9 */
+
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #962300;
+	font-size: 25px;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #777;
+	font-size: 12px;
+}
+#bloctxt {
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #962300;
+	padding-left: 10px;
+	position: absolute;
+	top:5%;
+	left: 50%;
+	width: 600px;
+	margin-left: -260px
+}
+#wrapper {
+	padding: 1px;
+	margin: 0 auto;
+}
+#border {
+	margin: 0 auto;
+	padding: 1px;
+	width:640px;
+	height:900px;
+	box-shadow:0 0 60px #000;
+}
+
+#canvas {
+	width:640px; 
+	height:900px;
+}
+
+#MMFCanvas {
+	background-color:#000;
+}
+#iframe {
+	display:none;
+	z-index:10;
+	width:100%;
+	height:100%;
+	margin-bottom:900px;
+	position:fixed;
+}
+iframe {
+	width:640px;
+	height:900px;
+	border:none;
+	margin:auto;
+	display:block;
+}
+</style>
+
+  
+
+	<script>
+		if (!window.HTMLCanvasElement)
+		{
+			alert('Sorry, your browser does not support HTML5. Please use a modern web browser like Chrome, Safari, or Firefox.');
+		}
+	</script>
+	
+  	
+  	
+  <script>
+
+	if (window.location.protocol == "file:")
+	{
+		document.write('<div id="bloctxt">');
+		document.write('<h1>Sorry, Fantasy Healthcare cannot be run locally.</h1>');
+		document.write('</div>');
+		throw new error("Cannot run application");
+	}
+
+	window.addEventListener("load", windowLoaded, false);
+	function windowLoaded()
+	{
+		new Runtime("MMFCanvas", "assets/fhc.cch");
+	}
+  </script>
+</head>
+
+<body>
+<div id="iframe">
+	<iframe src="blank.html">Your browser does not support the IFRAME tag.</iframe>
+</div>
+<div id="wrapper">
+	<div id="border">
+		<div id="canvas">
+			<canvas id="MMFCanvas" width="640" height="900">
+				<p>Sorry, your browser does not support HTML5. Please use a modern web browser like Chrome, Safari, or Firefox.</p>
+			</canvas>   
+		</div>
+	</div>
+</div>  
+</body>
+</html>

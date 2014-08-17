@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Chris Bartek -- Designer & Developer
+
+# THANKS
+
+    Mark Conner, Peter Jenkins, CDC
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, jQuery Mobile
+    Dreamweaver CS6
