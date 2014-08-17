@@ -1,7 +1,8 @@
-Fantasy-Healthcare
+Fantasy Healthcare
 ==================
 
 General Overview
+----------------
 Fantasy Healthcare is a loose adaptation of the fantasy football game concept, whereas players build their own healthcare providers and compete against others using real community data.
 
 Features
